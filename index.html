@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body>
+    <h1>Book A Call</h1>
+    <p style="font-size: large;">Book a call and our representative will call you</p>
+    <hr>
+    <form action="#" onsubmit="onclicking(event)" autocomplete="on">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="uname" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="uemail" required><br>
+        <label for="num">Phone:</label><br>
+        <input type="tel" name="unum" id="num" required><br>
+        <label for="calltime">Time for Call:</label><br>
+        <input type="datetime-local" id="calltime" name="ucalltime" required ><br><br>
+        <input type="submit" value="GET A CALL" style="box-shadow: 0px 0px 2px black;font-weight:bold;"><br>
+    </form>
+    <ul id="listofitems"></ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
