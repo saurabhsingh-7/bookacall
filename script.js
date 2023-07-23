@@ -46,6 +46,18 @@ function removeUserfromScreen(userId){
     const childNodeDeleted=document.getElementById(userId);
     parent.removeChild(childNodeDeleted)
 }
+//function to edit user
+//editUserDetail
+function editUserDetail(emailid,name,phonenumber,userId){
+    console.log(name);
+    console.log("saurabh");
+
+    document.getElementById('name').value=name; 
+    document.getElementById('email').value=emailid;
+    document.getElementById('num').value=phonenumber;
+    deleteUser(userId);
+}
+
 window.addEventListener("DOMContentLoaded",()=>{
     axios.get("https://crudcrud.com/api/89a949c8868a407aa5fe6169b7bcb659/apointmentData")
         .then((resp)=>{
