@@ -29,3 +29,16 @@ function showUserOnScreen(user)
             </li>`
     parentNode.innerHTML=parentNode.innerHTML + childNode; 
 }
+window.addEventListener("DOMContentLoaded",()=>{
+    axios.get("https://crudcrud.com/api/89a949c8868a407aa5fe6169b7bcb659/apointmentData")
+        .then((resp)=>{
+            for(var  i=0;i<resp.data.length;i++){
+                showUserOnScreen(resp.data[i]);
+            }
+        })
+        .catch((err)=>{
+            //if it error occured
+            document.body.innerHTML= document.body.innerHTML+"<h4>Something Went Wrong</h4>"
+            console.log(err);
+        })
+})
