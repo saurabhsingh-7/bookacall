@@ -29,6 +29,23 @@ function showUserOnScreen(user)
             </li>`
     parentNode.innerHTML=parentNode.innerHTML + childNode; 
 }
+//function to delete user
+function deleteUser(userId){
+    axios.delete(`https://crudcrud.com/api/89a949c8868a407aa5fe6169b7bcb659/apointmentData/${userId}`)
+       .then((response)=>{
+            removeUserfromScreen(userId)
+        }).catch((err)=>{
+            document.body.innerHTML= document.body.innerHTML+"<h4>Something Went Wrong</h4>"
+            console.log(err)
+            })
+    }
+
+//function to remove user from Screen
+function removeUserfromScreen(userId){
+    let parent=document.getElementById('listofitems');
+    const childNodeDeleted=document.getElementById(userId);
+    parent.removeChild(childNodeDeleted)
+}
 window.addEventListener("DOMContentLoaded",()=>{
     axios.get("https://crudcrud.com/api/89a949c8868a407aa5fe6169b7bcb659/apointmentData")
         .then((resp)=>{
